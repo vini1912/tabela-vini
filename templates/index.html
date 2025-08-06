@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda</title>
+    <link rel="stylesheet" href="/static/styles/estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/cadastro">Cadastro</a></li>
+            <li><a href="/consulta">Consulta</a></li>
+        </ul>
+    </nav>
+
+    <div class="conteudo">
+        <h2>Tela de Login</h2>
+        <form action="/login" method="post">
+            <div class="campo-form"> 
+                <label for="usuario">Usuário:</label>
+                <input type="text" name="usuario" placeholder="Digite seu Usuário" required>
+            </div>
+
+            <div class="campo-form">
+                <label for="senha">Senha:</label>
+                <input type="password" name="senha" placeholder="Digite sua senha" required>
+            </div>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>

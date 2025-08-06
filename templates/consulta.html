@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar Pessoas</title>
+    <link rel="stylesheet" href="/static/styles/estilo.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="/cadastro">Cadastro</a></li>
+            <li><a href="/consulta">Consulta</a></li>
+        </ul>
+    </nav>
+    <h2 style="text-align: center;">
+        Bem-vindo: {{usuario[3]}} |
+        <a href="/logout">Sair</a>
+    </h2>
+    <div class="table-container">
+        <h2>Pessoas Cadastradas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Imagem</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Telefone</th>
+                    <th>Opções</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pessoa in pessoas %}
+                <tr>
+                    <td>{{ pessoa[0] }}</td> 
+                    <td>
+                        <img src="static/assets/{{pessoa[4] }}" alt="Imagem de {{ pessoa[1] }}" style="width: 50px; height: auto;">
+                    </td>
+                    <td>{{ pessoa[1] }}</td> 
+                    <td>{{ pessoa[2] }}</td> 
+                    <td>{{ pessoa[3] }}</td> 
+                    <td class="opcoes">
+                        <a href="/ver/{{ pessoa[0] }}" class="link_ver">Ver</a>
+                        <a href="/editar/{{ pessoa[0] }}" class="link_editar">Editar</a>
+                        <a href="/excluir/{{ pessoa[0] }}" class="link_excluir">Excluir</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>            
+        </table>
+    </div>
+</body>
+
+</html>

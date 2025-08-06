@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Pessoa</title>
+    <link rel="stylesheet" href="/static/styles/estilo.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="/cadastro">Cadastro</a></li>
+            <li><a href="/consulta">Consulta Pessoas</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container2">
+        <h2>Dados da Pessoas</h2>
+        <div class="profile-container">
+            <!-- Exibição da imagem -->
+            <div class="profile-image">
+                {% if pessoa[4] %}
+                <img src="/static/assets/{{ pessoa[4] }}" alt="Imagem de {{ pessoa[1] }}">
+                {% else %}
+                <img src="/static/default-profile.png" alt="Imagem não disponível">
+                {% endif %}
+            </div>
+
+            <!-- Exibição dos dados -->
+            <div class="profile-details">
+                <p><strong>Nome:</strong> {{ pessoa[1] }}</p>
+                <p><strong>E-mail:</strong> {{ pessoa[2] }}</p>
+                <p><strong>Telefone:</strong> {{ pessoa[3] }}</p>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <a href="/editar/{{ pessoa[0] }}" class="link-editar">Editar</a>
+            <a href="/excluir/{{ pessoa[0] }}" class="link-excluir">Excluir</a>
+        </div>
+    </div>
+</body>
+
+</html>
